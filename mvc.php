@@ -1,11 +1,23 @@
 <?php
 
-function connect($sql){
-    $dbh= new PDO('mysql:host=localhost;dbname=test.loc', 'root', '');
-    $sth = $dbh->prepare($sql);
-    $sth->execute($param);
-    return $sth->fetchAll();
-}
+class DB {
 
-$res=connect('SELECT * FROM images');
-echo $res;
+    private $dbh;
+    public function __construct()
+    {
+            $this->dbh = new PDO('mysql:host=localhost;dbname=jstest', 'root', '');
+    }
+
+    public function query ($sql) {
+            $sth = $this->dbh->prepare($sql);
+            $sth->execute();
+			return $sth->fetchAll(PDO::FETCH_COLUMN);
+	}
+}
+if($_POST['data']){
+$dtb=new DB;
+$res=$dtb->query('SELECT name FROM images');
+print_r($res);
+asort($res);
+json_decode(res);
+}

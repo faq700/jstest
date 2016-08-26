@@ -20,32 +20,3 @@
 
 </body>
 </html>
-
-<?php
-class DB {
-
-    private $dbh;
-    public function __construct()
-    {
-            $this->dbh = new PDO('mysql:host=localhost;dbname=jstest', 'root', '');
-    }
-
-    public function query ($sql, $param=[]) {
-            $sth = $this->dbh->prepare($sql);
-            $sth->execute($param);
-            return $sth->fetchAll();
-    }
-}
-
-$dtb=new DB;
-$res=$dtb->query('SELECT name FROM images');
-var_dump($res);
-
-/*
-$res=connect('SELECT * FROM images');
-var_dump($res);
-foreach($res as $k => $v){
-    echo 'fg';
-    echo $v;
-}*/
-?>
