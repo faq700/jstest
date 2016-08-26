@@ -14,10 +14,10 @@ class DB {
 			return $sth->fetchAll(PDO::FETCH_COLUMN);
 	}
 }
-if($_POST['data']){
+
+if($_POST['move']=='right'){
 $dtb=new DB;
 $res=$dtb->query('SELECT name FROM images');
-print_r($res);
 asort($res);
-json_decode(res);
+echo json_encode($res);
 }
