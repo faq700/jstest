@@ -12,9 +12,9 @@
 <div class="main"></div>
 <button value="left" class="bot"><</button>
 <div class="bot">
-    <a><img class="botimg" src="../images/DSCN3798.jpg"></a>
-    <a><img class="botimg" src="../images/DSCN3798.jpg"></a>
-    <a><img class="botimg" src="../images/DSCN3798.jpg"></a>
+    <a><img class="botimg" id="1" src="../images/DSCN3798.jpg"></a>
+    <a><img class="botimg" id="2" src="../images/DSCN3799.jpg"></a>
+    <a><img class="botimg" id="3" src="../images/DSCN3800.jpg"></a>
 </div>
 <button value="right" class="bot"> > </button>
 
